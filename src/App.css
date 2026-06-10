@@ -1,38 +1,347 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background: linear-gradient(
+    135deg,
+    #141e30,
+    #243b55
+  );
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.page {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.rules,
+.game-info,
+.leader-box,
+.stats-box,
+.history,
+.winner-box {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.rules p,
+.game-info h4,
+.stats-box h3,
+.history p {
+  margin: 10px 0;
+}
+
+.dice-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 30px 0;
+}
+
+.dice {
+  width: 130px;
+  height: 130px;
+  background: white;
+  color: black;
+  border-radius: 20px;
+  font-size: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 25px rgba(255,255,255,0.4);
+}
+.dice-image {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 25px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: translateY(-4px);
+}
+
+.btn-group button:nth-child(1) {
+  background: #00c853;
+  color: white;
+}
+
+.btn-group button:nth-child(2) {
+  background: #2962ff;
+  color: white;
+}
+
+.btn-group button:nth-child(3) {
+  background: #d50000;
+  color: white;
+}
+
+.progress-section {
+  margin: 30px 0;
+}
+
+.progress-section p {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+progress {
+  width: 80%;
+  height: 25px;
+  border-radius: 20px;
+}
+
+.score-cards {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 220px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.card h2 {
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-size: 2rem;
+}
+
+.leader-box {
+  border: 2px solid gold;
+}
+
+.timer-box {
+  margin: 15px 0;
+  font-size: 1.2rem;
+}
+
+.remaining-box {
+  margin-top: 25px;
+}
+
+.remaining-box h3 {
+  margin: 10px 0;
+}
+
+.achievements {
+  margin-top: 30px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.achievements p {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+.winner-box {
+  animation: popup 0.6s ease;
+  border: 3px solid gold;
+}
+
+.winner-box h1 {
+  font-size: 4rem;
+}
+
+.winner-box button {
+  margin: 10px;
+  background: gold;
+  color: black;
+}
+
+@keyframes popup {
   from {
-    transform: rotate(0deg);
+    transform: scale(0.5);
+    opacity: 0;
   }
+
   to {
-    transform: rotate(360deg);
+    transform: scale(1);
+    opacity: 1;
   }
+}
+
+.navbar {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px 30px;
+
+  background: rgba(255,255,255,0.1);
+
+  backdrop-filter: blur(10px);
+
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+}
+
+.nav-links a:hover {
+  color: gold;
+}
+
+.home {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.hero {
+  margin-bottom: 50px;
+}
+
+.hero h1 {
+  font-size: 4rem;
+}
+
+.hero p {
+  margin-top: 15px;
+  font-size: 1.2rem;
+}
+
+.hero-buttons {
+  margin-top: 25px;
+}
+
+.hero-buttons button {
+  margin: 10px;
+  background: #00c853;
+  color: white;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.features .card {
+  width: 250px;
+}
+
+@media (max-width: 768px) {
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .dice-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .scoreboard {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.score-card {
+  width: 250px;
+
+  background: rgba(255,255,255,0.1);
+
+  backdrop-filter: blur(10px);
+
+  padding: 25px;
+
+  border-radius: 20px;
+
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.score-card h1 {
+  font-size: 3rem;
+  margin: 10px 0;
+}
+
+  .btn-group {
+    flex-direction: column;
+  }
+
+  progress {
+    width: 95%;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+}
+
+.dark {
+  background: #000;
+  color: white;
 }
