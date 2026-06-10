@@ -1,4 +1,30 @@
-# Getting Started with Create React App
+# 🎲 Dice Arena Pro
+
+A professional React Dice Game.
+
+## Features
+
+- Multiplayer Mode
+- Computer Mode
+- Leaderboard
+- Statistics
+- Achievements
+- Dice Sounds
+- Save Progress
+- Roll History
+- Winner Celebration
+- Responsive UI
+
+## Tech Stack
+
+- React.js
+- CSS3
+- LocalStorage
+- Vercel
+
+## Live Demo
+
+Coming Soon 🚀# Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
